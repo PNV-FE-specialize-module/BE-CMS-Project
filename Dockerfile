@@ -5,7 +5,7 @@
     WORKDIR /usr/src/app
 
     # A wildcard is used to ensure both package.json AND yarn.lock are copied
-    COPY package.json package-lock.json ./
+    COPY package*.json package-lock.json ./
 
     # Install app dependencies using yarn
     RUN npm install

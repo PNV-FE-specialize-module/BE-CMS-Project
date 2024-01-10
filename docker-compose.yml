@@ -35,9 +35,8 @@ services:
       - POSTGRES_PASSWORD=${PG_PASSWORD}
       - POSTGRES_DB=${PG_DB}
     volumes:
-      - pgdata:/var/lib/postgresql/data
-    # env_file:
-    #   - .env
+      - pgdata:/var/lssib/postgresql/data
+
 
   # redis:
   #   container_name: redis

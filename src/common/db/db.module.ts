@@ -8,11 +8,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     TypeOrmModule.forRootAsync({
       useFactory: (configService: ConfigService) => ({
         type: 'postgres',
-        host: configService.get('DB_HOST'),
-        port: configService.get<number>('DB_PORT'),
-        database: configService.get('DB_NAME'),
-        username: configService.get('DB_USER'),
-        password: configService.get('DB_PASSWORD'),
+        host: configService.get('PG_HOST'),
+        port: configService.get<number>('PG_PORT'),
+        database: configService.get('PG_DB'),
+        username: configService.get('PG_USER'),
+        password: configService.get('PG_PASSWORD'),
         entities: [__dirname + './../../entities/*{.ts,.js}'],
         synchronize: true,
         // ssl: {
