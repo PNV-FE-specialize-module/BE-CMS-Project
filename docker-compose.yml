@@ -9,16 +9,16 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3000:3000
-    environment:
-      - DB_TYPE=${DB_TYPE}
-      - PG_HOST=${PG_HOST}
-      - PG_USER=${PG_USER}
-      - PG_PASSWORD=${PG_PASSWORD}
-      - PG_DB=${PG_DB}
-      - PG_PORT=${PG_PORT}
-      # - REDIS_HOST=${REDIS_HOST} # Địa chỉ của Redis container
-      # - REDIS_PORT=${REDIS_PORT} # Cổng Redis
-      # - REDIS_PASS=${REDIS_PASS}
+    # environment:
+    #   - DB_TYPE=${DB_TYPE}
+    #   - PG_HOST=${PG_HOST}
+    #   - PG_USER=${PG_USER}
+    #   - PG_PASSWORD=${PG_PASSWORD}
+    #   - PG_DB=${PG_DB}
+    #   - PG_PORT=${PG_PORT}
+    #   # - REDIS_HOST=${REDIS_HOST} # Địa chỉ của Redis container
+    #   # - REDIS_PORT=${REDIS_PORT} # Cổng Redis
+    #   # - REDIS_PASS=${REDIS_PASS}
     depends_on:
       - db
       # - redis
@@ -36,8 +36,8 @@ services:
       - POSTGRES_DB=${PG_DB}
     volumes:
       - pgdata:/var/lib/postgresql/data
-    env_file:
-      - .env
+    # env_file:
+    #   - .env
 
   # redis:
   #   container_name: redis
